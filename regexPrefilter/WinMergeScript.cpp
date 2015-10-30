@@ -8,6 +8,7 @@
 #include "regexfilter.h"
 
 std::vector<REGEXVARIANT *> regexStore;
+std::string rulesFileName;
 /////////////////////////////////////////////////////////////////////////////
 // CWinMergeScript
 
@@ -127,8 +128,15 @@ STDMETHODIMP CWinMergeScript::PrediffBufferW(BSTR *pText, INT *pSize, VARIANT_BO
   std::wstring filteredInput;
   std::wistringstream  instrm(p);
 
+  // Generate the regex-file name to load rules from.
+  CHAR str[MAX_PATH];
+  GetModuleFileName(_Module.GetModuleInstance(), &str[0], MAX_PATH);
+  PathRemoveExtension(&str[0]);
+  strcat_s(str, MAX_PATH, ".regex");
+  rulesFileName.assign(str);
+
   // filter the string now
-  bool res = filterInput(&regexStore, instrm,filteredInput);
+  bool res = filterInput(&rulesFileName, &regexStore, instrm, filteredInput);
 
   // check the processing result
   if (res == false)

@@ -23,7 +23,7 @@ struct ltstr
 #endif
 
 
-bool filterInput(std::vector<REGEXVARIANT *> *regexStore, std::wistream  &instrm, std::wstring &output);
-bool readRules(std::vector<REGEXVARIANT *> *regexStore);
+bool filterInput(std::string *rulesFileName, std::vector<REGEXVARIANT *> *regexStore, std::wistream  &instrm, std::wstring &output);
+bool readRules(std::string *fileName, std::vector<REGEXVARIANT *> *regexStore);
 void cleanRules(std::vector<REGEXVARIANT *> *regexStore);
 
