@@ -162,6 +162,7 @@
       </DataExecutionPrevention>
       <ImportLibrary>.\ReleaseUMinDependency/regexPrefilter.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -208,6 +209,7 @@
       </DataExecutionPrevention>
       <ImportLibrary>.\ReleaseMinDependency/regexPrefilter.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -254,6 +256,7 @@
       </DataExecutionPrevention>
       <ImportLibrary>.\ReleaseMinSize/regexPrefilter.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -301,6 +304,8 @@
       </DataExecutionPrevention>
       <ImportLibrary>.\DebugU/regexPrefilter.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
+      <LinkTimeCodeGeneration>
+      </LinkTimeCodeGeneration>
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -348,6 +353,7 @@
       </DataExecutionPrevention>
       <ImportLibrary>.\Debug/regexPrefilter.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -394,6 +400,7 @@
       </DataExecutionPrevention>
       <ImportLibrary>.\ReleaseUMinSize/regexPrefilter.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
