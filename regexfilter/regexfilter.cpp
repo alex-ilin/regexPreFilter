@@ -37,7 +37,7 @@ bool process_stream(std::vector<REGEXVARIANT *> *regexStore, std::wistream& is, 
 
    while(std::getline(is, line))
    {     
-     for (int i=0; i< regexStore->size(); i++)
+     for (unsigned int i = 0; i < regexStore->size(); i++)
      {
        int startpos = 0;
        line = REGEX_REPLACE(line , *(*regexStore)[i], L"");
