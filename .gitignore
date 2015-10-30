@@ -1,0 +1,14 @@
+*.aps
+*.dll
+*.exe
+*.exp
+*.ilk
+*.lib
+*.log
+*.oca
+*.ocx
+*.opensdf
+*.pdb
+*.sdf
+*.suo
+*.user
