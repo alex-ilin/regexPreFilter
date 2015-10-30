@@ -82,45 +82,6 @@ END
 /////////////////////////////////////////////////////////////////////////////
 
 
-/////////////////////////////////////////////////////////////////////////////
-// Französisch (Frankreich) resources
-
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRA)
-#ifdef _WIN32
-LANGUAGE LANG_FRENCH, SUBLANG_FRENCH
-#pragma code_page(1252)
-#endif //_WIN32
-
-#ifdef APSTUDIO_INVOKED
-/////////////////////////////////////////////////////////////////////////////
-//
-// TEXTINCLUDE
-//
-
-1 TEXTINCLUDE DISCARDABLE 
-BEGIN
-    "resource.h\0"
-END
-
-2 TEXTINCLUDE DISCARDABLE 
-BEGIN
-    "#include ""winres.h""\r\n"
-    "\0"
-END
-
-3 TEXTINCLUDE DISCARDABLE 
-BEGIN
-    "1 TYPELIB ""regexPrefilter.tlb""\r\n"
-    "\0"
-END
-
-#endif    // APSTUDIO_INVOKED
-
-#endif    // Französisch (Frankreich) resources
-/////////////////////////////////////////////////////////////////////////////
-
-
-
 #ifndef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
 //

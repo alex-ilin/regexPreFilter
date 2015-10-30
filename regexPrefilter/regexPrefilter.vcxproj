@@ -147,7 +147,8 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <Culture>0x040c</Culture>
+      <Culture>
+      </Culture>
     </ResourceCompile>
     <Link>
       <OutputFile>regexPreFilter.dll</OutputFile>
@@ -192,7 +193,8 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <Culture>0x040c</Culture>
+      <Culture>
+      </Culture>
     </ResourceCompile>
     <Link>
       <OutputFile>regexPreFilter.dll</OutputFile>
@@ -237,7 +239,8 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <Culture>0x040c</Culture>
+      <Culture>
+      </Culture>
     </ResourceCompile>
     <Link>
       <OutputFile>regexPreFilter.dll</OutputFile>
@@ -282,7 +285,8 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <Culture>0x040c</Culture>
+      <Culture>
+      </Culture>
     </ResourceCompile>
     <Link>
       <OutputFile>regexPreFilter.dll</OutputFile>
@@ -328,7 +332,8 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <Culture>0x040c</Culture>
+      <Culture>
+      </Culture>
     </ResourceCompile>
     <Link>
       <OutputFile>regexPreFilter.dll</OutputFile>
@@ -374,7 +379,8 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <Culture>0x040c</Culture>
+      <Culture>
+      </Culture>
     </ResourceCompile>
     <Link>
       <OutputFile>regexPreFilter.dll</OutputFile>
