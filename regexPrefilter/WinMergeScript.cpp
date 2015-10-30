@@ -112,11 +112,6 @@ int main()
 
 STDMETHODIMP CWinMergeScript::PrediffBufferW(BSTR *pText, INT *pSize, VARIANT_BOOL *pbChanged, VARIANT_BOOL *pbHandled)
 {
- // rule
- // scan lines ,  analyse ", \"
- // find // in lines
- //   compact // ..EOL  to //EOL
- //   compact /*.. */ to /**/   (keep line ends)
 #ifdef _DEBUG
   __asm  { int 3 };
 #endif
