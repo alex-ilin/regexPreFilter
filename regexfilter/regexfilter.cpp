@@ -59,10 +59,6 @@ bool readRules(std::string *fileName, std::vector<REGEXVARIANT *> *regexStore)
 {
   //MessageBoxA(NULL, fileName->c_str(), NULL, 0);
   struct stat b;  
-  wifstream inFile(fileName->c_str());
-  wstring   line;
-  int       linenum = 0;
-  bool      rulefound = false;
 
   if (!stat(fileName->c_str(), &b)) {
     if ((saved_mtime == b.st_mtime) && (current_file.compare(*fileName) == 0))
@@ -73,6 +69,11 @@ bool readRules(std::string *fileName, std::vector<REGEXVARIANT *> *regexStore)
     saved_mtime = b.st_mtime;
     current_file.assign(*fileName);
   }
+
+  wifstream inFile(fileName->c_str());
+  wstring   line;
+  int       linenum = 0;
+  bool      rulefound = false;
 
   while (getline (inFile, line))
   {
