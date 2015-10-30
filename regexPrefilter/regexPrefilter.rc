@@ -44,11 +44,11 @@ BEGIN
             VALUE "Comments", "\0"
             VALUE "FileDescription", "regexPrefilter Module\0"
             VALUE "FileVersion", "1, 0, 0, 1\0"
-            VALUE "InternalName", "regexPrefilter\0"
             VALUE "LegalCopyright", "Copyright 2005\0"
-            VALUE "OriginalFilename", "regexPrefilter.DLL\0"
             VALUE "ProductName", "regexPrefilter Module\0"
             VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "regexPreFilter"
+            VALUE "OriginalFilename", "regexPreFilter.dll"
         END
     END
     BLOCK "VarFileInfo"
@@ -65,7 +65,7 @@ END
 
 STRINGTABLE
 BEGIN
-    IDS_PROJNAME            "regexPrefilter"
+    IDS_PROJNAME            "regexPreFilter"
 END
 
 #endif    // Neutral resources
