@@ -12,6 +12,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "regexPrefilter", "regexPref
 		{556E4290-D909-4109-BB45-F8502184A14C} = {556E4290-D909-4109-BB45-F8502184A14C}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestRegex", "TestRegex\TestRegex.vcproj", "{C8F81F16-2DA2-4237-A11B-1AD0A13CAD82}"
+	ProjectSection(ProjectDependencies) = postProject
+		{556E4290-D909-4109-BB45-F8502184A14C} = {556E4290-D909-4109-BB45-F8502184A14C}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -65,6 +70,20 @@ Global
 		{32415AB7-A4A1-460D-8BBE-45A7D8715314}.Unicode Release MinDependency|Win32.Build.0 = Unicode Release MinDependency|Win32
 		{32415AB7-A4A1-460D-8BBE-45A7D8715314}.Unicode Release MinSize|Win32.ActiveCfg = Unicode Release MinSize|Win32
 		{32415AB7-A4A1-460D-8BBE-45A7D8715314}.Unicode Release MinSize|Win32.Build.0 = Unicode Release MinSize|Win32
+		{C8F81F16-2DA2-4237-A11B-1AD0A13CAD82}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C8F81F16-2DA2-4237-A11B-1AD0A13CAD82}.Debug|Win32.Build.0 = Debug|Win32
+		{C8F81F16-2DA2-4237-A11B-1AD0A13CAD82}.Release MinDependency|Win32.ActiveCfg = Release MinDependency|Win32
+		{C8F81F16-2DA2-4237-A11B-1AD0A13CAD82}.Release MinDependency|Win32.Build.0 = Release MinDependency|Win32
+		{C8F81F16-2DA2-4237-A11B-1AD0A13CAD82}.Release MinSize|Win32.ActiveCfg = Release MinSize|Win32
+		{C8F81F16-2DA2-4237-A11B-1AD0A13CAD82}.Release MinSize|Win32.Build.0 = Release MinSize|Win32
+		{C8F81F16-2DA2-4237-A11B-1AD0A13CAD82}.Release|Win32.ActiveCfg = Release MinSize|Win32
+		{C8F81F16-2DA2-4237-A11B-1AD0A13CAD82}.Release|Win32.Build.0 = Release MinSize|Win32
+		{C8F81F16-2DA2-4237-A11B-1AD0A13CAD82}.Unicode Debug|Win32.ActiveCfg = Unicode Debug|Win32
+		{C8F81F16-2DA2-4237-A11B-1AD0A13CAD82}.Unicode Debug|Win32.Build.0 = Unicode Debug|Win32
+		{C8F81F16-2DA2-4237-A11B-1AD0A13CAD82}.Unicode Release MinDependency|Win32.ActiveCfg = Unicode Release MinDependency|Win32
+		{C8F81F16-2DA2-4237-A11B-1AD0A13CAD82}.Unicode Release MinDependency|Win32.Build.0 = Unicode Release MinDependency|Win32
+		{C8F81F16-2DA2-4237-A11B-1AD0A13CAD82}.Unicode Release MinSize|Win32.ActiveCfg = Unicode Release MinSize|Win32
+		{C8F81F16-2DA2-4237-A11B-1AD0A13CAD82}.Unicode Release MinSize|Win32.Build.0 = Unicode Release MinSize|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

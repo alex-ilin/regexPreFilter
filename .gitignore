@@ -1,3 +1,8 @@
+dlldata.c
+regexPrefilter.h
+regexUnpacker.h
+*_i.c
+*_p.c
 *.aps
 *.dll
 *.exe
@@ -11,4 +16,5 @@
 *.pdb
 *.sdf
 *.suo
+*.tlb
 *.user

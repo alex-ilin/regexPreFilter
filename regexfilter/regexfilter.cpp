@@ -1,4 +1,3 @@
-#include <boost/regex.hpp>
 #include <string>
 #include <iostream>
 #include <sstream>
@@ -6,11 +5,13 @@
 #include <sys/stat.h>
 #include "regexfilter.h"
 
+
+
 using namespace std;
 using namespace boost;
 using namespace std;
 using namespace boost;
-boost::smatch what;
+REGEXMATCH what;
 
 int after_context = 0;
 int before_context = 0;
@@ -26,7 +27,8 @@ char     fname[] = "c:\\regexrules.txt";
 
 
 
-bool process_stream(std::map<std::wstring, boost::wregex *, ltstr> *regexStore, std::wistream& is, std::wostringstream& os)
+
+bool process_stream(std::vector<REGEXVARIANT *> *regexStore, std::wistream& is, std::wostringstream& os)
 {
    bool processed = false;
    std::wstring line;
@@ -35,16 +37,10 @@ bool process_stream(std::map<std::wstring, boost::wregex *, ltstr> *regexStore, 
 
    while(std::getline(is, line))
    {     
-     for(std::map<std::wstring, boost::wregex *, ltstr>::iterator it = regexStore->begin(); it != regexStore->end(); ++it)
+     for (int i=0; i< regexStore->size(); i++)
      {
        int startpos = 0;
-       bool result;
-       string sub_str ;
-       std::wstring  str = it->first;
-       boost::wregex *re = it->second;
-       std::wostringstream   linestrm;
-
-       line = regex_replace(line , *re, "");
+       line = REGEX_REPLACE(line , *(*regexStore)[i], L"");
        processed = true;
 
      }
@@ -60,7 +56,7 @@ bool process_stream(std::map<std::wstring, boost::wregex *, ltstr> *regexStore, 
 }
 
 
-bool readRules(std::map<std::wstring, boost::wregex *, ltstr> *regexStore)
+bool readRules(std::vector<REGEXVARIANT *> *regexStore)
 {
   struct stat b;  
   wifstream inFile (fname);
@@ -86,18 +82,22 @@ bool readRules(std::map<std::wstring, boost::wregex *, ltstr> *regexStore)
     if (getline (linestream, item))
     {
 
-      boost::wregex *re = new boost::wregex;
+      REGEXVARIANT *re = new REGEXVARIANT;
       if (!re)
       {
         inFile.close();
         return false;
       }
 
+#ifdef USE_XPRESSIVE
+      *re = boost::xpressive::wsregex::compile(item);
+#else
       // assign the rule
       re->assign(item, boost::regex_constants::extended);
+#endif
       
       // insert to store
-      (*regexStore)[item] = re;
+      (*regexStore).push_back(re);
       
       rulefound = true;
     }
@@ -107,21 +107,21 @@ bool readRules(std::map<std::wstring, boost::wregex *, ltstr> *regexStore)
   return rulefound;
 }
 
-void cleanRules(std::map<std::wstring, boost::wregex *, ltstr> *regexStore)
-{
- 
-  for(std::map<std::wstring, boost::wregex *, ltstr>::iterator it = regexStore->begin(); it != regexStore->end(); ++it)
-  {
-    boost::wregex *re = it->second;
-    delete re;
-  }
 
+void cleanRules(std::vector<REGEXVARIANT *> *regexStore)
+{
+  while (!regexStore->empty())
+  {
+    REGEXVARIANT *Item = regexStore->back();
+    regexStore->pop_back();
+    delete Item;
+  }
   regexStore->clear();
 
 }
 
 
-bool filterInput(std::map<std::wstring, boost::wregex *, ltstr> *regexStore, std::wistream  &instrm, std::wstring &output)
+bool filterInput(std::vector<REGEXVARIANT *> *regexStore, std::wistream  &instrm, std::wstring &output)
 {   
    bool                 ruleFound;
    bool                 processed;

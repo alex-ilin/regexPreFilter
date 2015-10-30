@@ -5,10 +5,9 @@
 #include <string>
 #include <iostream>
 #include <sstream>
-#include "boost/regex.hpp"
 #include "regexfilter.h"
 
-std::map<std::wstring, boost::wregex *, ltstr> regexStore;
+std::vector<REGEXVARIANT *> regexStore;
 /////////////////////////////////////////////////////////////////////////////
 // CWinMergeScript
 
@@ -21,7 +20,7 @@ STDMETHODIMP CWinMergeScript::get_PluginEvent(BSTR *pVal)
 
 STDMETHODIMP CWinMergeScript::get_PluginDescription(BSTR *pVal)
 {
-  *pVal = SysAllocString(L"The plugin ignores comments (//... and /* ... */) in C, C++, PHP and JavaScript files.");
+  *pVal = SysAllocString(L"Prediffer plug-in that uses Regular Expressions to hide unimportant differences in your sources.");
   return S_OK;
 }
 

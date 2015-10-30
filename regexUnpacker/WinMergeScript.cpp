@@ -27,21 +27,17 @@
 #include <stdio.h>
 #include "regexUnpacker.h"
 #include "WinMergeScript.h"
-#include "boost/regex.hpp"
 #include <string>
 #include <iostream>
 #include <sstream>
 #include <fstream>
-
-
-#include "boost/regex.hpp"
 #include <string>
 #include <iostream>
 #include <sstream>
 #include <fstream>
 #include "regexfilter.h"
 
-std::map<std::wstring, boost::wregex *, ltstr> regexStore;
+std::vector<REGEXVARIANT *> regexStore;
 /////////////////////////////////////////////////////////////////////////////
 // CWinMergeScript
 
@@ -54,7 +50,7 @@ STDMETHODIMP CWinMergeScript::get_PluginEvent(BSTR *pVal)
 
 STDMETHODIMP CWinMergeScript::get_PluginDescription(BSTR *pVal)
 {
-	*pVal = SysAllocString(L"Transform an xml file so WinMerge can display it - save will not transform back");
+	*pVal = SysAllocString(L"Unpacker plug-in that uses Regular Expressions to hide unimportant differences in your sources");
 	return S_OK;
 }
 
