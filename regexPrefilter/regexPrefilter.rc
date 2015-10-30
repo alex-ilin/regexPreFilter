@@ -41,14 +41,14 @@ BEGIN
     BEGIN
         BLOCK "040904b0"
         BEGIN
-            VALUE "Comments", "\0"
-            VALUE "FileDescription", "regexPrefilter Module\0"
+            VALUE "Comments", "Put in MergePlugins folder, rename as needed, use <pluginName>.regex file to configure."
+            VALUE "FileDescription", "regexPreFilter Plugin for WinMerge v2.14"
             VALUE "FileVersion", "1, 0, 0, 1\0"
-            VALUE "LegalCopyright", "Copyright 2005\0"
-            VALUE "ProductName", "regexPrefilter Module\0"
             VALUE "ProductVersion", "1, 0, 0, 1\0"
             VALUE "InternalName", "regexPreFilter"
+            VALUE "LegalCopyright", "(c) by Alexander Ilin, 2015."
             VALUE "OriginalFilename", "regexPreFilter.dll"
+            VALUE "ProductName", "regexPreFilter Plugin for WinMerge v2.14"
         END
     END
     BLOCK "VarFileInfo"
