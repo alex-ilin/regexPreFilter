@@ -2,119 +2,37 @@
 
 <head>
 <meta http-equiv="Content-Language" content="en-us">
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<title>Regular Expression Filters for WinMerge</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Regular Expression PreFilter for WinMerge v2.14</title>
 </head>
 
 <body>
-
-<h3>Regular Expression Filters for WinMerge</h3>
+<h1>Regular Expression PreFilter for WinMerge v2.14</h1>
 <hr>
-<p>After spending too much time trying to understand how line filters work in
-WinMerge, I gave up and decided to write this plug-in so that I won't lose time
-again.<br>
-I'm sharing it for the community to gather feedbacks and improvements. I
-developed this overnight. Do not expect too much robustness. My feeling is it
-works.<br>
-If it doesn't for you, give me an example or post to forum. I'll try to improve
-this as I find time.<br>
-<br>
-There are two plug-ins available for WinMerge. They enable you to filter
-unimportant text during comparison. There is a central rule file which is
-located<br>
-on your c:\ folder. (The folder is fixed as of this moment. We can fix this
-later).<br>
-<br>
-See the <a href="https://sourceforge.net/projects/regexfilterforw/files/">
-SourceForge website</a> for an example rule file.</p>
-<p>&nbsp;</p>
+<p>I found <a href="http://regexfilterforw.sourceforge.net/">this WinMerge plugin on SourceForge</a>, and decided to improve it a little. I'm giving the result back to the community so that maybe someone picks it up and takes it further someday. Alexander Ilin, 2015.</p>
+
+<h2>regexPreFilter</h2>
+<p>The plugin is used to apply regular expression filtering on per-line basis. Start your file comparison as usual, then select the regexPreFilter.dll in the Plugins menu. The parts of the file that match one of the regular expressions will be considered unmodified by WinMerge.</p>
+
+<h2>Example</h2>
+<p>Let's say you have two files with grocery lists:<br><img src="Before.png" alt="Files with unimportant changes highlighted."></p>
+<p>It looks like almost entire file was rewritten, but in fact only one line was added, and the rest of the lines below it only had their numbers updated. We'd like to ignore the difference in line numbers and focus on the content changes, so we put the following regular expression in the regexPreFilter.regex file:<br>
+<pre>^[0-9]+ </pre></p>
+<p>Next, we select the plugin in the main menu:<br><img src="SelectPlugin.png" alt="Select regexPreFilter.dll in the menu."></p>
+<p>Now all we see are the important changes:<br><img src="After.png" alt="Files with unimportant changes hidden."></p>
+
 <h2>Installation</h2>
-<p>Download the zip that contains the binaries directly from
-<a href="https://sourceforge.net/projects/regexfilterforw/files/">here</a>.
-Download the example rule file too.</p>
 <ol>
-	<li>copy your rule file to c:\ and name it as regexrules.txt. You can use the
-example as a starter.</li>
-	<li>Place regexPrefilter.dll and regexUnpacker.dll to your plugins folder of
-	WinMerge (usually c:\Program Files\WinMerge\MergePlugins).</li>
-	<li>If you
-are willing to use regexUnpacker, delete or remove ignoreCommentsC.dll from
-plugins folder. Choose automatic unpacking from winmerge.</li>
-	<li>Enable the plug-ins by going to Plugins menu item and then choose List,&nbsp;
-	click on Enable plugins checkbox.<br><br>Known problems: sometimes unpacking works sometimes it does not. Closing and
-reopening winmerge helps.<br><br>There are two version of the same plug-in.</li>
+	<li>Download the <a href="https://sourceforge.net/projects/regexfilterforw/files/">zip-file</a>, it contains the plugin and an example regex-file.</li>
+	<li>Copy regexPreFilter.dll and regexPreFilter.regex to your WinMerge plugins folder (normally it's C:\&#x200b;Program Files\&#x200b;WinMerge\&#x200b;MergePlugins).</li>
+	<li>Enable the plugins. Go to the WinMerge's Plugins menu, choose List, check Enable plugins and click OK.<br>
+<img src="Plugins-List.png" alt="List item in the Plugins menu."> <img src="EnablePlugins.png" alt="The Enable plugins checkbox checked."></li>
 </ol>
-<ul>
-	<li>preDiffer </li>
-	<li>Unpacker.<br>
-&nbsp;</li>
-</ul>
-<p>&nbsp;</p>
-<h3>1) PreDiffer</h3>
-<p>preDiffer plug-in is used to apply regular expression filtering on per file
-basis. You compare your files as usual. Then enable the preDiffer<br>
-from plug-ins menu.<br>
-<br>
-It tries to hide unimportant differences according to rules in regexrules file.<br>
-The caveat is that you 'll have to enable it every time you compare the files.
-It is off by default.<br>
-I could not find a way to enable it by default. Maybe this behavior will change
-overtime.</p>
-<h3>2) Unpacker</h3>
-<p>WinMerge unpackers are associated with file extensions. There may be multiple
-unpackers per file type. I have removed ignoreCommentsC plugin from<br>
-my WinMerge installation folder so that regex unpacker can have a chance to
-work. WinMerge chooses the unpacker according to alphabetical order.<br>
-When WinMerge sees a file of known extension, it executes the unpacker on every
-matching file on a directory comparison. This is more useful then preDiffer<br>
-if you have too many changed files. You'll not be able to modify the compared
-files as the shown file is different from what it is in the original place.<br>
-Use your text editor for changing differences.</p>
-<p>Unpackers can be enabled/disabled from Plugins menu item. Choose automatic
-unpacking if you want to ignore the files that you are not interested in. Then,
-start your comparision.</p>
-<h2>Usual Practice</h2>
-<p>I usually compare the folder using the unPacker first.
-</p>
-<ol>
-	<li>Enable automatic unpacker from plugins menu while all the files are
-	close. </li>
-	<li>Go to Plugins menu and then choose List. </li>
-	<li>Choose regexUnpacker and </li>
-	<li>Then start your folder comparison.</li>
-</ol>
-<p>Do not belive in the description. I stole the solution file from XML unpacker.
-I'll fix the description one day.</p>
-<p>This eliminates all the files that I'm not interested
-in.
-</p>
-<p>After the comparison, I turn off the automatic filter by choosing the Manual
-Unpacking from plug-ins menu.
-</p>
-<p>Next, I open the file by double clicking it. It is
-going to show all the important and unimportant differences.
-</p>
-<p>Go-to Plugins menu
-item again. Choose prediffer and then regexPrefilter.dll.
-</p>
-<p>Unimportant
-differences are gone again.
-</p>
-<p>The nice thing about prefilter mode is that you can
-modify the files on the fly. You can change them and save them because
-differences are still visible. It is just WinMerge that does not highlight them
-as different. This allows you to make all of your changes on a single program.
-You do not need to move forth and back between your editor and comparision tool.
-</p>
-<p>Don't forget to disable unpacking if you want to use preDiffer. Otherwise,
-WinMerge will tell you that you cannot save your modification.</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 
+<h2>Use</h2>
+<p>Each line of the regex-file contains a separate rule.</p>
+<p>You can modify the rules on the fly, the regex-file is reread every time comparison is redone (press F5 to recompare the currently open files in WinMerge).</p>
+<p>You can create multiple copies of the plugin DLL with different names. Each copy will load the corresponding regex-file. This way you can have multiple rulesets selectable in the Prediffer menu.</p>
+<p>You'll have to manually activate the plugin every time you compare files. It is off by default, and there is no way to enable it automatically (as of WinMerge v2.14). This is probably a good thing: you would not want to miss some changes without explicitly making them disappear.</p>
 </body>
-
 </html>
