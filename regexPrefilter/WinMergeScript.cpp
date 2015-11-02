@@ -21,7 +21,7 @@ STDMETHODIMP CWinMergeScript::get_PluginEvent(BSTR *pVal)
 
 STDMETHODIMP CWinMergeScript::get_PluginDescription(BSTR *pVal)
 {
-  *pVal = SysAllocString(L"Prediffer plug-in that uses Regular Expressions to hide unimportant differences in your sources.");
+  *pVal = SysAllocString(L"Prediffer plugin that uses regular expressions to selectively hide changes.");
   return S_OK;
 }
 
