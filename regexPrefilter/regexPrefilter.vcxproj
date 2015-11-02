@@ -418,7 +418,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="regexPrefilter.def" />
-    <None Include="WinMergeScript.rgs" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="regexPrefilter.idl">
