@@ -24,7 +24,8 @@ Now all we see are the important changes:
 ## Installation
 1. Download the [zip-file](https://github.com/AlexIljin/regexPreFilter/releases/download/v1.1/regexPreFilter-v1.1.zip), it contains the plugin and an example regex-file.
 2. Copy regexPreFilter.dll and regexPreFilter.regex to your WinMerge plugins folder (normally it's C:\Program Files\ WinMerge\ MergePlugins).
-3. Enable the plugins. Go to the WinMerge's Plugins menu, choose List, check Enable plugins and click OK.
+3. Enable the plugins. Go to the WinMerge's Plugins menu, choose List, check Enable plugins and click OK. <br>![](/web/Plugins-List.png?raw=true "List item in the Plugins menu.") ![](/web/EnablePlugins.png?raw=true "The Enable plugins checkbox checked.")
+
 
 ## Use
 Each line of the regex-file contains a separate rule.
